@@ -1,12 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
 const App = () => {
-  return (
-    <div>
-      hhh
-      
-    </div>
-  )
-}
+  return <Button colorScheme="blue">Button</Button>;
+};
 
-export default App
+export default App;
