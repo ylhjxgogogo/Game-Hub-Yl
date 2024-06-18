@@ -12,6 +12,7 @@ import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { Platform } from "../hooks/useGames";
 import { IconType } from "react-icons";
+import { Fragment } from "react/jsx-runtime";
 interface Props {
   platforms: Platform[];
 }
@@ -31,9 +32,9 @@ const PlatformIconList = ({ platforms }: Props) => {
     <HStack marginY={1}>
       {platforms.map((platform) => {
         return (
-          <>
+          <Fragment key={platform.id}>
             <Icon as={iconMap[platform.slug]} color="gray.500" />
-          </>
+          </Fragment>
         );
       })}
     </HStack>
