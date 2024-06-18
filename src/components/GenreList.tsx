@@ -4,8 +4,9 @@ import getCropImageUrl from "../services/image-url";
 import GenreSkeleton from "./GenreSkeleton";
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectGenre: Genre | null;
 }
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   if (isLoading) return <GenreSkeleton />;
   if (error) return null;
@@ -21,7 +22,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
                 src={getCropImageUrl(genre.image_background)}
               />
               <Button
-                fontSize="large"
+                fontWeight={genre.id === selectGenre?.id ? "bold" : "normal"}
                 variant="link"
                 onClick={() => onSelectGenre(genre)}
               >
