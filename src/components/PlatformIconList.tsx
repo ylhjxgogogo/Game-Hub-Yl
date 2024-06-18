@@ -12,7 +12,6 @@ import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { Platform } from "../hooks/useGames";
 import { IconType } from "react-icons";
-
 interface Props {
   platforms: Platform[];
 }
@@ -31,7 +30,11 @@ const PlatformIconList = ({ platforms }: Props) => {
   return (
     <HStack marginY={1}>
       {platforms.map((platform) => {
-        return <Icon as={iconMap[platform.slug]} color="gray.500" />;
+        return (
+          <>
+            <Icon as={iconMap[platform.slug]} color="gray.500" />
+          </>
+        );
       })}
     </HStack>
   );
