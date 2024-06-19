@@ -2,7 +2,6 @@ import {
   Card,
   CardBody,
   Skeleton,
-  SkeletonCircle,
   SkeletonText,
   Spinner,
 } from "@chakra-ui/react";

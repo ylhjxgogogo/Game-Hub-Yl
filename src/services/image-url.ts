@@ -1,4 +1,5 @@
 const getCropImageUrl = (url: string) => {
+  if (!url) return "";
   const target = "media/";
   const start = url.indexOf(target);
   const end = start + target.length;
