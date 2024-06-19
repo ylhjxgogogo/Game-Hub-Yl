@@ -1,5 +1,6 @@
+import noImage from "../assets/no-image-placeholder.webp";
 const getCropImageUrl = (url: string) => {
-  if (!url) return "";
+  if (!url) return noImage;
   const target = "media/";
   const start = url.indexOf(target);
   const end = start + target.length;
