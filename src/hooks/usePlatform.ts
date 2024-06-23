@@ -14,7 +14,7 @@ const usePlatforms = () => {
       return apiClient.getAll();
     },
     staleTime: 24 * 60 * 60 * 1000,
-    initialData: { count: platforms.length, results: platforms },
+    initialData: { count: platforms.length, results: platforms, next: null },
   });
   return config;
 };
