@@ -32,6 +32,7 @@ const useGames = (gameQuery: GameQuery) => {
       return lastPage.next ? allPages.length + 1 : undefined; //有下一页吗，有的话页码加1
     },
     queryFn: fetchGames,
+    staleTime: 24 * 60 * 60 * 1000,
   });
   return config;
 };
