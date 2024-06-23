@@ -1,21 +1,18 @@
-import apiClient, { FetchResponse } from "../services/api-client";
 import { useQuery } from "@tanstack/react-query";
-
+import APIClient from "../services/api-client";
 import genres from "../data/genres";
 export interface Genre {
   id: number;
   name: string;
   image_background: string;
 }
-
+const apiClient = new APIClient<Genre>("/genres");
 const useGenres = () => {
   // return useData<Genre>("/genres");
   const config = useQuery({
     queryKey: ["genres"],
     queryFn: () => {
-      return apiClient
-        .get<FetchResponse<Genre>>("/genres")
-        .then((res) => res.data);
+      return apiClient.getAll();
     },
     staleTime: 24 * 60 * 60 * 1000, //2 days;
     //返回值期待FetchResponse<Genre>类型，因此我们要把初始数据也设置为这种类型
