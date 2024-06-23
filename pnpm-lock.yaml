@@ -29,6 +29,9 @@ dependencies:
   framer-motion:
     specifier: ^11.2.10
     version: 11.2.10(react-dom@18.3.1)(react@18.3.1)
+  ms:
+    specifier: ^2.1.3
+    version: 2.1.3
   react:
     specifier: ^18.2.0
     version: 18.3.1
@@ -43,6 +46,9 @@ dependencies:
     version: 6.1.0(react@18.3.1)
 
 devDependencies:
+  '@types/ms':
+    specifier: ^0.7.34
+    version: 0.7.34
   '@types/react':
     specifier: ^18.2.66
     version: 18.3.3
@@ -2025,6 +2031,10 @@ packages:
     resolution: {integrity: sha512-MBIOHVZqVqgfro1euRDWX7OO0fBVUUMrN6Pwm8LQsz8cWhEpihlvR70ENj3f40j58TNxZaWv2ndSkInykNBBJw==, tarball: https://registry.npmjs.org/@types/lodash/-/lodash-4.17.5.tgz}
     dev: false
 
+  /@types/ms@0.7.34:
+    resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==, tarball: https://registry.npmjs.org/@types/ms/-/ms-0.7.34.tgz}
+    dev: true
+
   /@types/parse-json@4.0.2:
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==, tarball: https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.2.tgz}
     dev: false
@@ -3049,6 +3059,10 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==, tarball: https://registry.npmjs.org/ms/-/ms-2.1.2.tgz}
+
+  /ms@2.1.3:
+    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==, tarball: https://registry.npmjs.org/ms/-/ms-2.1.3.tgz}
+    dev: false
 
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==, tarball: https://registry.npmjs.org/nanoid/-/nanoid-3.3.7.tgz}

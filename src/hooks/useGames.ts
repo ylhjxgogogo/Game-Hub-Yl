@@ -2,6 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
 import { Platform } from "./usePlatforms";
 import APIClient from "../services/api-client";
+import ms from "ms";
 export interface Game {
   id: number;
   name: string;
@@ -32,7 +33,7 @@ const useGames = (gameQuery: GameQuery) => {
       return lastPage.next ? allPages.length + 1 : undefined; //有下一页吗，有的话页码加1
     },
     queryFn: fetchGames,
-    staleTime: 24 * 60 * 60 * 1000,
+    staleTime: ms("24h"),
   });
   return config;
 };

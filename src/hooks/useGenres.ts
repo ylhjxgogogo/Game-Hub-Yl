@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 import genres from "../data/genres";
+import ms from "ms";
 export interface Genre {
   id: number;
   name: string;
@@ -14,7 +15,7 @@ const useGenres = () => {
     queryFn: () => {
       return apiClient.getAll();
     },
-    staleTime: 24 * 60 * 60 * 1000, //2 days;
+    staleTime: ms("24h"), //2 days;
     //返回值期待FetchResponse<Genre>类型，因此我们要把初始数据也设置为这种类型
     //1.要么在原始数据里进行修改-》{count,T[]}，2.直接在结构上修改
     //在staleTime时间内使用初始数据进行展示，超出时间后重新请求
