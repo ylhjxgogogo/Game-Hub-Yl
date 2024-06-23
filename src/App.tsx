@@ -35,7 +35,7 @@ const App = () => {
         />
       </GridItem>
       <Show above="lg">
-        <Box marginX={-2}>
+        <Box marginX={-2} marginY={8}>
           <GridItem area="aside">
             <GenreList
               onSelectGenre={(genre) =>

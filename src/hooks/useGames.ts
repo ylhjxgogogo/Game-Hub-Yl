@@ -1,6 +1,7 @@
+import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
-import useData from "./useData";
 import { Platform } from "./usePlatform";
+import apiClient, { FetchResponse } from "../services/api-client";
 
 export interface Game {
   id: number;
@@ -11,22 +12,22 @@ export interface Game {
   rating_top: number; //整数
 }
 const useGames = (gameQuery: GameQuery) => {
-  return useData<Game>(
-    "/games",
-    {
-      params: {
-        genres: gameQuery.genre?.id,
-        platforms: gameQuery.platform?.id,
-        ordering: gameQuery.sortOrder,
-        search: gameQuery.searchText,
-      },
-    },
-    [
-      gameQuery.genre?.id,
-      gameQuery.platform?.id,
-      gameQuery.sortOrder,
-      gameQuery.searchText,
-    ]
-  );
+  const fetchGames = () => {
+    return apiClient
+      .get<FetchResponse<Game>>("/games", {
+        params: {
+          genres: gameQuery.genre?.id,
+          platforms: gameQuery.platform?.id,
+          ordering: gameQuery.sortOrder,
+          search: gameQuery.searchText,
+        },
+      })
+      .then((res) => res.data);
+  };
+  const config = useQuery({
+    queryKey: ["games", gameQuery], //这表示gamequery里面任何参数变化，就会重新发起请求
+    queryFn: fetchGames,
+  });
+  return config;
 };
 export default useGames;
