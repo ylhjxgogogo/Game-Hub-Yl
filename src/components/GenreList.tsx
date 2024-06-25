@@ -9,12 +9,11 @@ import {
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCropImageUrl from "../services/image-url";
 import GenreSkeleton from "./GenreSkeleton";
-interface Props {
-  onSelectGenre: (genreId: number) => void;
-  selectGenreId: number | undefined;
-}
-const GenreList = ({ onSelectGenre, selectGenreId }: Props) => {
+import useGameQueryStore from "../store/strore";
+const GenreList = () => {
   const { data, error, isLoading } = useGenres();
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
+  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
   if (isLoading) return <GenreSkeleton />;
   if (error) return null;
   return (
@@ -34,9 +33,9 @@ const GenreList = ({ onSelectGenre, selectGenreId }: Props) => {
                   objectFit="cover"
                 />
                 <Button
-                  fontWeight={genre.id === selectGenreId ? "bold" : "normal"}
+                  fontWeight={genre.id === genreId ? "bold" : "normal"}
                   variant="link"
-                  onClick={() => onSelectGenre(genre.id)}
+                  onClick={() => setGenreId(genre.id)}
                   whiteSpace="normal"
                   textAlign="left"
                 >
