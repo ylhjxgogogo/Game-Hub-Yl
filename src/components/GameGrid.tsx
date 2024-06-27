@@ -3,7 +3,7 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import useGames from "../hooks/useGames";
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 import { Fragment } from "react/jsx-runtime";
 import InfiniteScroll from "react-infinite-scroll-component";
 const GameGrid = () => {
