@@ -5,6 +5,7 @@ interface Props {
 }
 const Screenshot = ({ gameId }: Props) => {
   const { data, isLoading, error } = useScreenshots(gameId);
+  if (!data) return null;
   if (isLoading) return <Spinner />;
   if (error) throw error;
   const results = data?.results;

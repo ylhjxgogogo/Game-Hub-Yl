@@ -22,7 +22,9 @@ const GameDetail = () => {
         <Box>
           {" "}
           <GameTrailer gameId={game.id} />
-          <Screenshot gameId={game.id} />
+          <Box marginY="20px">
+            <Screenshot gameId={game.id} />
+          </Box>
         </Box>
       </SimpleGrid>
     </>
